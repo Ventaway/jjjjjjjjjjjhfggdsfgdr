@@ -1,5 +1,5 @@
-proceed-button.addEventListener("click", () => {
-    proceed-button.remove()
+clickToEnter.addEventListener("click", () => {
+    clickToEnter.remove()
 })
 
 const TEXTS = [
