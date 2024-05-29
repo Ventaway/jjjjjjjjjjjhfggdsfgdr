@@ -6,7 +6,7 @@ const TEXTS = [
     "@weedpack",
     "nigga ur broke",
     "@resistkskr",
-    "dev @ kidnap.baby"
+    "dev @ kidnap.baby xd"
 ]
 
 async function sleep(ms) {
