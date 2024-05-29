@@ -3,7 +3,11 @@
     src: url("../fonts/regular.otf") format("opentype");
 }
 
-@import url("https://fonts.googleapis.com/css2?family=IBM%20Plex%20Mono:wght@400;700&amp;display=swap");
+@font-face {
+    font-family: "ibm";
+    src: url("../fonts/IBM.ttf") format("opentype");
+}
+
 
 @font-face {
     font-family: "pr";
