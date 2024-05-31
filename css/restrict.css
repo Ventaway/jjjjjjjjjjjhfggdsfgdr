@@ -62,6 +62,15 @@ main {
     align-items: center;
 }
 
+ #ip{
+    color: #6432A5;
+    font-family: "Jersey 15", sans-serif;
+    filter: drop-shadow(0px 0px 2px #6432A5);
+    opacity: 50%;
+    font-size: 17px;
+    margin-top: 5px;
+    }
+
 .content {
     background: #ffffff00;
     min-width: 500px;
