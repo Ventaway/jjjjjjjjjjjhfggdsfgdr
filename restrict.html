@@ -30,6 +30,7 @@ made by restrict!
     <div class="content">
         <img class="profile-picture" alt="ICON" src="https://files.catbox.moe/qt31a2.jpg" style="margin-bottom: 1em"/>
         <h1 style="font-family: ibm; font-size: 60px; margin-bottom: 0; padding-bottom: 0" class="glow">Restrict</h1>
+       <center><p id='ip'></p></center>
         <span id="typedOut" class="glow" style="font-family: 'ibm'; color: white; height: 20px"></span>
         <center>
             <h3>
@@ -37,7 +38,118 @@ made by restrict!
             </h3>
         </center>
     </div>
+  <script>
+    document.querySelectorAll('.title1').forEach((element) => {
+      const textContent1 = element.getAttribute('data-text1');
+      const textContent2 = element.getAttribute('data-text2');
+      const pauseDuration = 1500;
+      let currentTextIndex = 1; 
+
+      function updateText(text) {
+          element.textContent = text;
+      }
+
+      function typeText(text) {
+          let currentIndex = 0;
+          const typingInterval = setInterval(() => {
+              currentIndex++;
+              updateText(text.slice(0, currentIndex));
+              if (currentIndex === text.length) {
+                  clearInterval(typingInterval);
+                  setTimeout(() => deleteText(text), pauseDuration);
+              }
+          }, 100);
+      }
+
+      function deleteText(text) {
+          let currentIndex = text.length;
+          const deletingInterval = setInterval(() => {
+              currentIndex--;
+              updateText(text.slice(0, currentIndex));
+              if (currentIndex === 0) {
+                  clearInterval(deletingInterval);
+                  switchText();
+              }
+          }, 125);
+      }
+
+      function switchText() {
+          currentTextIndex = currentTextIndex === 1 ? 2 : 1; 
+          const nextText = currentTextIndex === 1 ? textContent1 : textContent2;
+          setTimeout(() => typeText(nextText), pauseDuration);
+      }
+
+      typeText(textContent1); 
+    });
+
+    function dip() {
+    fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('ip').textContent = `[ harm me: ${data.ip} ]`;
+    })
+    }
+    dip();
+
+//    document.getElementById("button1").addEventListener("click", function() {
+//        this.style.display = "none";
+//        document.getElementById("container1").style.display = "none";
+//        document.getElementById("container2").style.display = "block";
+
+//    });
+
+    document.getElementById("button1").addEventListener("click", function() {
+        var container1 = document.getElementById("container1");
+        var container2 = document.getElementById("container2");
+
+        container1.style.transition = "opacity 0.4s";
+        container1.style.opacity = 0;
+
+        setTimeout(function() {
+            container1.style.display = "none";
+            container2.style.display = "block";
+
+            container2.style.transition = "opacity 0.3s";
+            container2.style.opacity = 1;
+        }, 500); 
+    });
+
+    document.querySelectorAll('.title2').forEach((element) => {
+    const textContent = element.getAttribute('data-text');
+    const pauseDuration = 300;
+    let currentIndex = 0;
+
+    function updateText() {
+      element.textContent = textContent.slice(0, currentIndex);
+    }
+
+    function typeText() {
+      currentIndex++;
+
+      if (currentIndex <= textContent.length) {
+        updateText();
+        setTimeout(typeText, 300); 
+      } else {
+        setTimeout(() => {
+          deleteText();
+        }, pauseDuration);
+      }
+    }
+
+    function deleteText() {
+      if (currentIndex > 1) {
+        currentIndex--;
+        updateText();
+        setTimeout(deleteText, 300);
+      } else {
+        setTimeout(typeText, pauseDuration);
+      }
+    }
+
+    typeText();
+    });
 </main>
+  </script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="js/restrict.js"></script>
 <script src="js/restrict1.js"></script>
