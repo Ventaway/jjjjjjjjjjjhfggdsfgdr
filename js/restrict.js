@@ -5,7 +5,7 @@ clickToEnter.addEventListener("click", () => {
 const TEXTS = [
     "@weedpack",
     "nigga ur broke",
-    "@resistkskr",
+    "@resist/restrict",
     "dev @ kidnap.baby xd"
 ]
 
