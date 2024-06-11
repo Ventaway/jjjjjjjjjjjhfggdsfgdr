@@ -108,14 +108,30 @@ body {
         animation: glow 1s ease-in-out infinite alternate;
     }
 
-.ascii {
-  text-align: center;
-  font-size: 4.3px;
-  opacity: 1;
-  color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
-  margin-top: 10%;
+.landing {
+    margin: 0 auto;
+    text-align: center;
 }
+
+    .landing-logo {
+        width: 20em;
+    }
+
+    .landing a {
+        color: #fff;
+        text-decoration: none;
+        transition: ease-in-out .1s;
+    }
+
+    .landing a:hover {
+        color: #7700FF;
+        text-decoration: none;
+    }
+
+    .landing .archive {
+        font-weight: bold;
+        font-size: 2em;
+    }
     .archive-box .row {
         display: flex;
         flex-wrap: wrap;
